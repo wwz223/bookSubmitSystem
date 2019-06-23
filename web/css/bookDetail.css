@@ -1,0 +1,50 @@
+/*浮动*/
+.float-left {
+    float: left;
+}
+
+.float-right{
+	float: right;
+}
+/*清除浮动*/
+.clear-float {
+    clear: both;
+}
+.book-details {
+    width: 800px;
+    min-width: 600px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.book-details .session {
+    margin-bottom: 5px;
+    padding-bottom: 10px;
+    border-bottom: 5px solid grey;
+}
+
+.book-details .session .content-txt {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.book-details .session .content-txt .content-txt-img {
+    width: 40%;
+    text-align: center;
+}
+
+.book-details .session .content-txt .content-txt-img a {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.book-details .session .content-txt .content-txt-img a img {
+    width: 100%;
+}
+
+.book-details .session .content-txt .content-txt-body {
+    width: 40%;
+    margin-left: 20px;
+    margin-top: 30px;
+}

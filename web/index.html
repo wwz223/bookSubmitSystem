@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="referrer" content="no-referrer" />
+	<title>教材上报系统</title>
+	<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+	<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script> -->
+	<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+	<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script> -->
+	<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+	<script src="./js/underscore/underscore-min.js"></script>
+
+
+	<script src="js/jquery-1.10.2.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+
+	<script src="./js/index.js"></script>
+
+
+	<link rel="stylesheet" href="./css/base.css">
+	<link rel="stylesheet" href="./css/index.css">
+	<link rel="stylesheet" href="./css/mySubmit.css">
+
+
+</head>
+
+<body>
+
+	<!-- 首页头部模块 -->
+	<header class="header-index">
+		<h1 class="header-logo">教材上报系统</h1>
+		<ul class="header-nav">
+			<li class="header-index-firstpage"><a href="#" onclick="firstPage()">首页</a></li>
+			<li class="header-index-backstage"><a href="">管理后台</a></li>
+			<li class="header-index-mysubmit"><a href="#" onclick="showMySubmit()">我的上报</a></li>
+			<li class="header-index-user">
+				<span class="float-left" id="header-username"><a href="#" onclick="loginRegist()">登录/注册</a></span>
+				<div class="icon-user float-left"></div>
+				<ul class="user-login-list">
+					<li><a href="#" onclick="showMyMessage()">个人信息</a></li>
+					<li><a href="#" id="my-submit" onclick="showMySubmit()">我的订单</a></li>
+					<li><a href="#" onclick="loginOut()">退出</a></li>
+				</ul>
+			</li>
+		</ul>
+
+	</header>
+
+	<!-- 主体部分 -->
+	<main class="content-index content-body">
+		<!-- 学院信息 -->
+		<nav class="submenu-content">
+			<ul class="submenu-list" id="sub-menu">
+				<li class="academic"><a href="#">全部教材</a></li>
+				<li class="academic"><a href="#">电子信息工程学院</a></li>
+				<li class="academic"><a href="#">社会发展学院</a></li>
+				<li class="academic"><a href="#">建筑工程学院</a></li>
+				<li class="academic"><a href="#">外国语学院</a></li>
+				<li class="academic"><a href="#">生命科学学院</a></li>
+				<li class="academic"><a href="#">文学院</a></li>
+				<li class="academic"><a href="#">体育学院</a></li>
+			</ul>
+		</nav>
+
+		<div class="book-content">
+			<!-- 教材列表 -->
+			<div class="book-list">
+				<div class="book-list-title">
+					<h4>教材列表</h4>
+				</div>
+				<div class="table-responsive book-list-content">
+					<div id="bookDate"></div>
+				</div>
+				<!-- 页码部分 -->
+				<nav aria-label="Page navigation" class="page-number">
+					<ul class="pagination">
+						<li>
+							<a href="#" aria-label="Previous">
+								<span aria-hidden="true">&laquo;</span>
+							</a>
+						</li>
+						<li><a href="#">1</a></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<li><a href="#">5</a></li>
+						<li>
+							<a href="#" aria-label="Next">
+								<span aria-hidden="true">&raquo;</span>
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+
+			<!-- 教材详细信息 -->
+			<div class="book-details">
+				<section class="session book-details-list">
+					<div class="content-title">
+						<h4>教材信息：</h4>
+					</div>
+					<div class="content-txt">
+						<div class="content-txt-img float-left">
+							<a class="nbg" href="" title="C语言程序设计"><img id="book_details_img" src="" title="点击看大图"
+									alt="C语言程序设计"></a>
+						</div>
+						<div class="content-txt-body float-left">
+							<p>书　　名：<span id="book_details_bName"></span></p>
+							<p>作　　者：<span id="book_details_author"></span></p>
+							<p>出 版 社：<span id="book_details_pubComp"></span></p>
+							<p>书　　号：<span id="book_details_bId"></span></p>
+							<p>定　　价：<span id="book_details_price"></span></p>
+							<p>出版时间：<span id="book_details_pubDate"></span></p>
+							<p>库存数量：<span id="book_details_bCount"></span></p>
+						</div>
+						<br class="clear-float">
+						<div class="content-txt-add">
+							<div class="choose-amount float-left">
+								<input type="text" id="add-book-count" value="1">
+								<button class="amount-add" onclick="addCount()">+</button>
+								<button class="amount-sub" onclick="subCount()">-</button>
+							</div>
+							<button class="choose-btn float-left btn btn-default" id="add-book"
+								onclick="addCart()">添加</button>
+						</div>
+					</div>
+
+				</section>
+
+				<section class="section book-details-content">
+					<div class="content-title">
+						<h2>内容简介：</h2>
+					</div>
+					<div class="content-txt">
+						<p id="book_details_bookIntroduce">
+							《翻译理论与实践(涉外法律专业)》由五大模块组成：理论篇、技巧篇、基础实践篇、文体篇和法律实践篇。《翻译理论与实践(涉外法律专业)》通过理论阐述、范文示例、篇章分析和相关练习等途径，注重理论、技巧与实践三者的结合，通过大量英汉对比分析，旨在让学生通过本课程了解翻译的历史和主要的理论，掌握基本的翻译技巧，从而进行应用性的翻译实践。《翻译理论与实践(涉外法律专业)》可用作英汉翻译教材，也可供自学或爱好翻译者参考使用。
+						</p>
+					</div>
+				</section>
+
+
+				<div class="loading-content" style="display: none;"><span>正在加载...</span></div>
+
+			</div>
+		</div>
+		<div class="clear-float"></div>
+	</main>
+
+	<!-- 我的上报 -->
+
+	<div class="my-submit content-body">
+		<!-- 		<nav class="submenu-content">
+	        <ul class="submenu-list" id="sub-menu">
+	            <li class="academic active"><a href="#">我的上报</a></li>
+	            <li class="academic"><a href="#">电子信息工程学院</a></li>
+	            <li class="academic"><a href="#">社会发展学院</a></li>
+	            <li class="academic"><a href="#">建筑工程学院</a></li>
+	            <li class="academic"><a href="#">外国语学院</a></li>
+	            <li class="academic"><a href="#">生命科学学院</a></li>
+	            <li class="academic"><a href="#">文学院</a></li>
+	            <li class="academic"><a href="#">体育学院</a></li>
+	        </ul>
+	    </nav> -->
+		<div class="submit-header">
+			<div class="header-title">我的上报</div>
+			<div class="header-excel">
+				Excel表名称:<input type="text" id="excel-name">
+				<a class="btn btn-default" id="down-file" onclick="getExcel()">导出Excel表格</a>
+			</div>
+
+		</div>
+		<div class="table-responsive my-order-list" id="table_wrapper">
+			<div id="my-order"></div>
+		</div>
+
+	</div>
+
+	<!-- 个人信息 -->
+
+	<div class="my-message content-body">
+		<div class="message-header">个人信息</div>
+		<div class="message-form" id="userMessage">
+			<script type="text/template" id="user_message">
+				<form id="userMessage" class="form-horizontal">
+					<div class="form-group">
+						<label for="loginName" class="col-sm-2 control-label">用户名：</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="loginName" placeholder="用户名" value="<%=model.loginName%>">
+						</div>
+					</div>
+		
+					<div class="form-group">
+						<label for="headimg" class="col-sm-2 control-label">头像：</label>
+						<div class="col-sm-10">
+							<div class="float-left"><img id="backImg" src="<%=model.backImg%>" alt="..." class="img-circle"
+									style="width: 70px;height: 70px;"></div>
+							<div class="info">支持jpg、gif、png或bmp格式的图片，建议文件小于20M</div>
+							<button>修改头像</button>
+						</div>
+		
+					</div>
+					<div class="form-group">
+						<label for="" class="col-sm-2 control-label">性别：</label>
+						<div class="col-sm-10" id="userSex">
+							<input name="sex" type="radio" checked="" value="男" />男
+							<input name="sex" type="radio" checked="" value="女" />女
+							<% if(model.sex == "男"){
+								$('#userSex').children("input").eq(0).attr("checked","checked");
+							}else{
+								$('#userSex').children("input").eq(1).attr("checked","checked");
+							}
+							%>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="tName" class="col-sm-2 control-label">真实姓名：</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="tName" placeholder="真实姓名" value="<%=model.tName%>">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="usertel" class="col-sm-2 control-label">联系电话：</label>
+						<div class="col-sm-10">
+							<input type="number" class="form-control" id="usertel" placeholder="联系电话" value="<%=model.phoneNumber%>" min="1" max="100000000000">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="userIntro" class="col-sm-2 control-label">个人介绍：</label>
+						<div class="col-sm-10">
+							<textarea name="inputtxt" class="j-textarea inputtxt" id="userIntro"
+								style="width: 395px; height: 74px;"><%=model.intro%></textarea>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-10">
+							<button type="submit" class="btn btn-default">提交修改</button>
+						</div>
+					</div>
+				</form>
+			</script>
+		</div>
+	</div>
+
+	<!-- 登录/注册 -->
+	<!-- 遮罩层 -->
+	<div class="login-regist-background" id="cover"></div>
+	<!-- 弹窗 -->
+	<div class="login-regist-body" id="showdiv">
+		<div class="body-top">
+			<span class="icon-close float-right" id="form-close"><a href="#" onclick="closeWindow()"><img
+						src="./images/icons/icon-close.jpg" alt=""></a></span>
+			<ul>
+				<li class="body-top-login float-left"><a href="#" onclick="formTabLogin()"
+						style="border-bottom-color: #31A4F6">登录</a></li>
+				<li class="body-top-regist float-left"><a href="#" onclick="formTabRegist()">注册</a></li>
+			</ul>
+		</div>
+		<!-- 登录 -->
+		<form id="form-log" class="form-inline form-login">
+			<div class="form-group">
+				<span class="icon-input"><img src="./images/icons/icon-username.jpg" alt=""></span>
+				<input type="text" id="login-name" class="form-control" name="uid" placeholder="用户名">
+			</div><br>
+			<div class="form-group">
+				<span class="icon-input"><img src="./images/icons/icon-pwd.jpg" alt=""></span>
+				<input type="password" id="login-pwd" class="form-control" name="pwd" placeholder="密码">
+			</div><br>
+			<div class="form-group">
+				<button type="submit" class="btn btn-default">Login</button>
+			</div>
+		</form>
+		<!-- 注册 -->
+		<form id="form-reg" class="form-inline form-regist" style="display: none">
+			<div class="form-group">
+				<span class="icon-input"><img src="./images/icons/icon-username.jpg" alt=""></span>
+				<input type="text" class="form-control " id="regist-uid" name="uid" Required
+					placeholder="请输入用户名（4-10个字符）" pattern="[a-zA-Z]\w{3,9}" />
+			</div><br>
+			<div class="form-group">
+				<span class="icon-input"><img src="./images/icons/icon-pwd.jpg" alt=""></span>
+				<input type="password" class="form-control" id="regist-pwd" name="pwd" Required placeholder="请设置密码"
+					pattern="[a-zA-Z0-9]\w{4,10}">
+			</div><br>
+			<div class="form-group">
+				<span class="icon-input"><img src="./images/icons/icon-pwd.jpg" alt=""></span>
+				<input type="password" class="form-control" id="regist-rePwd" name="rePwd" Required placeholder="请确认密码">
+			</div><br>
+			<div class="form-group">
+				<button type="submit" class="btn btn-default">Regist</button>
+			</div>
+		</form>
+	</div>
+
+	<footer class="footer">
+		<i class="icon-font i-logo" title="腾讯课堂_专业的在线教育平台"></i>
+		<p>软件工程大作业</p>
+		<p> 小组成员 | 王维正 | 张洋 | 耿亚楠 | 杨洋 | 王盼盼 |</p>
+	</footer>
+
+	<!-- 首页教材列表 -->
+	<script type="text/template" id="book_list">
+		<table class="table table-hover">
+		 <tr><td style='display:none'>书号</td><td>书名</td><td>作者</td></tr>
+		 <%$.each(model,function(i,item){%>
+				<tr><td style='display:none'><%=item.bId%></td>
+				<td><%=item.bName%></td>
+				<td><%=item.author%></td>
+				<td><button class='btn-book-details btn btn-default'>详情</button></td></tr>
+		 <%});%>	
+		</table>
+	</script>
+	<!-- 我的教材列表 -->
+	<script type="text/template" id="my_bookList">
+		<table class="table table-hover" id="my-order">
+				<tr><td style='display:none'>书号</td><td>书名</td><td>订购数量</td></tr>
+				<%$.each(model,function(i,item){%>
+					<tr>
+						<td style='display:none'><%=item.bid%></td>
+						<td><%=item.bName%></td>
+						<td><%=item.bCount%></td>
+						<td><button class='add-Book  btn btn-default'>移除</button></td>
+						<td><button class='look-Book  btn btn-default'><a href="html/bookDetail.html?bId=<%=item.bid%>" target='_blank'>详情</a></button></td></tr>
+				<%});%>	
+			</table>
+	</script>
+</body>
+
+</html>

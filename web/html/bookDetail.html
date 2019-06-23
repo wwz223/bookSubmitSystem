@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="referrer" content="no-referrer"/>
+    <title>详情</title>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../js/bookDetail.js"></script>
+    <!-- <link rel="stylesheet" href="../css/base.css"> -->
+    <link rel="stylesheet" href="../css/bookDetail.css">
+    
+</head>
+
+<body>
+    <div class="book-details">
+    	<a href="../index.html">< 首页</a>
+        <section class="session book">
+            <div class="content-title">
+                <h2>图书信息：</h2>
+            </div>
+            <div class="content-txt">
+                <div class="content-txt-img float-left">
+                    <a class="nbg" href="" title="C语言程序设计"><img id="book_details_img" src="" title="点击看大图" alt="C语言程序设计"></a>
+                </div>
+                <div class="content-txt-body float-left">
+                    <p>书　　名：<span id="book_details_bName"></span></p>
+                    <p>作　　者：<span id="book_details_author"></span></p>
+                    <p>出 版 社：<span id="book_details_pubComp"></span></p>
+                    <p>书　　号：<span id="book_details_bId"></span></p>
+                    <p>定　　价：<span id="book_details_price"></span></p>
+                    <p>出版时间：<span id="book_details_pubDate"></span></p>
+                    <p>库存数量：<span id="book_details_bCount"></span></p>
+                </div>
+            </div>
+            <br class="clear-float">
+        </section>
+
+        <section class="section j-nav-para-item">
+            <div class="content-title">
+                <h2>内容简介：</h2>
+            </div>
+            <div class="content-txt">
+                <p id="book_details_bookIntroduce">《翻译理论与实践(涉外法律专业)》由五大模块组成：理论篇、技巧篇、基础实践篇、文体篇和法律实践篇。《翻译理论与实践(涉外法律专业)》通过理论阐述、范文示例、篇章分析和相关练习等途径，注重理论、技巧与实践三者的结合，通过大量英汉对比分析，旨在让学生通过本课程了解翻译的历史和主要的理论，掌握基本的翻译技巧，从而进行应用性的翻译实践。《翻译理论与实践(涉外法律专业)》可用作英汉翻译教材，也可供自学或爱好翻译者参考使用。</p>
+            </div>
+        </section>
+        <div class="loading-content" style="display: none;"><span>正在加载...</span></div>
+    </div>
+    <!-- 弹出层 -->
+
+</body>
+
+</html>

@@ -1,0 +1,440 @@
+body{
+	min-width: 1250px;
+	min-height: 100%;
+	font-size: 14px;
+	color: #333;
+	background-color: #fff;
+	box-sizing: border-box; 
+}
+/**
+ * 首页头部模块
+ */
+
+.header-index{
+	width: 100%;
+	min-width:1250px; 
+	height: 70px;
+	line-height: 70px;
+	position:fixed;
+	left: 0px;
+	top: 0px;
+	box-shadow: 0 1px 0 0 #ddd;
+	border-bottom: 2px solid #DDDDDD;
+	background: linear-gradient(#32C9FF, #6FA8DC,#DDDDDD);
+	z-index: 100;
+
+}
+.header-index .header-logo{
+	width: 300px;
+	padding-top: 15px;
+	margin-left: 50px;
+	float: left;
+}
+
+.header-index .header-nav{
+	float: right;
+	height: 100%;
+	margin-right: 20px;
+}
+
+.header-index .header-nav li{
+	float: left;
+	padding-left: 20px;
+	height: 100%;
+	line-height: 70px;
+}
+
+
+.header-index .header-nav .header-index-user .user-login-list{
+	display: none;
+}
+.header-index .header-nav .header-index-user:hover .user-login-list{
+	display: block;
+}
+
+.header-index .header-nav .header-index-user .icon-user{
+	width: 50px;
+	height: 50px;
+	border-radius: 90%;
+	margin-top: 10px;
+	margin-left: 10px;
+	background: url("../images/head.jpg") no-repeat;
+	background-size: cover;
+}
+
+.header-index .header-nav .header-index-user .user-login-list{
+	position: absolute;
+	top: 60px;
+	border: 1px solid #C6C6C6;
+}
+.header-index .header-nav .header-index-user .user-login-list li{
+	float: left;
+	width:150px;
+	height: 30px;
+	line-height: 30px;
+	border-bottom: 1px solid #C6C6C6;
+	color: #C6C6C6;
+}
+
+
+/**
+ * 主体部分
+ */
+
+.content-body{
+	width:80%;
+	min-width: 1000px;
+	margin:0 auto;
+	padding-top: 70px;
+}
+
+
+.submenu-content{
+	width:100%;
+	padding-top: 20px;
+	/*background:#CCFF99;*/
+	border-bottom: 2px solid #32C9FF;
+}
+.submenu-content .submenu-list{
+	font-size: 18px;
+	line-height: 30px;
+	overflow: hidden;
+}
+.submenu-content .submenu-list li{
+	float: left;
+	height: 40px;
+	margin-left: 20px;
+}
+.book-content{
+	width:100%;
+	padding-top: 20px;
+	margin:0 auto;
+}
+.book-content .book-list{
+	width:40%;
+	height: 520px;
+	padding-bottom: 70px;
+	position: relative;
+	float:left;
+}
+.book-content .book-list .book-list-title{
+	margin-bottom: 10px;
+}
+.book-content .book-list .book-list-content{
+	width: 100%;
+	height: 420px;
+	overflow-y:auto;
+}
+/*页码*/
+.book-content .book-list .page-number{
+	height: 70px;
+	width: 100%;
+	position: absolute;
+	text-align:center;
+	bottom: 0;
+}
+
+.book-content .book-details{
+	width: 58%;
+	margin-left: 20px;
+	float: left;
+}
+
+
+.book-details {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.book-details .session {
+	width: 100%;
+    margin-bottom: 5px;
+    padding-bottom: 10px;
+    border-bottom: 5px solid grey;
+}
+.book-details .session .content-txt{
+	width: 100%;
+	margin: 0 auto;
+	/*overflow: hidden;*/
+	position: relative;
+}
+
+.book-details .book-details-list .content-txt .content-txt-img {
+    width: 35%;
+    text-align: center;
+    /*background: yellow;*/
+}
+
+.book-details .book-details-list .content-txt .content-txt-img a {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    height: 270px;
+    text-align: center;
+    line-height: 270px;
+}
+
+.book-details .book-details-list .content-txt .content-txt-img a img {
+    width: 100%;
+}
+
+.book-details .book-details-list .content-txt .content-txt-body {
+    width: 45%;
+    /*background: pink;*/
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.book-details .book-details-list .content-txt .content-txt-body p{
+	line-height: 30px;
+}
+.book-details .book-details-content .content-txt{
+	padding-top: 10px;
+}
+.book-details .book-details-content .content-txt p{
+	line-height: 25px;
+	font-size: 18px;
+	letter-spacing:20px；
+}
+
+.book-details .book-details-list .content-txt .content-txt-add{
+	width: 130px;
+	height: 44px;
+	position: absolute;
+	bottom: 20px;
+	right: 50px;
+	/*background: yellowgreen;*/
+}
+.book-details .book-details-list .content-txt .content-txt-add .choose-amount{
+	width: 50px;
+	height: 44px;
+	position: relative;
+	overflow: hidden;
+}
+
+.book-details .book-details-list .content-txt .content-txt-add .choose-amount input{
+	width:100%;
+	padding-right: 30px;
+	display: block;
+    height: 42px;
+    border: 1px solid #ccc;
+}
+.book-details .book-details-list .content-txt .content-txt-add .choose-amount input:focus{
+	border: 1px solid #5cb85c;
+}
+.book-details .book-details-list .content-txt .content-txt-add .choose-amount button{	
+	display: block;
+	width: 15px;
+	height: 22px;
+	text-align: center;
+	line-height: 22px;
+	font-size: 14px;
+	position: absolute;
+	right: 0;
+    background: #f1f1f1;
+    color: #666;
+}
+
+.book-details .book-details-list .content-txt .content-txt-add .choose-amount .amount-add{
+	top: 0;
+}
+.book-details .book-details-list .content-txt .content-txt-add .choose-amount .amount-sub{
+	bottom: 0;
+}
+
+.book-details .book-details-list .content-txt .content-txt-add .choose-btn{
+	width: 70px;
+	height: 44px;	
+	margin-left: 3px;
+	
+}
+
+
+/* 我的上报 */
+.my-submit{
+	width:80%;
+	min-width: 1000px;
+	height: 800px;
+	margin:0 auto;
+	padding-top: 80px;
+	overflow: hidden;
+	display: none;
+}
+.my-submit .submit-header{
+	height: 50px;
+	width: 100%;
+	line-height: 50px;
+	font-size: 18px;
+	/*background: linear-gradient(#32C9FF, #6FA8DC,#DDDDDD);*/
+	border-bottom: 2px solid #32C9FF;
+	position: relative;
+}
+
+.my-submit .submit-header .header-title{
+	height: 30px;
+	width: 200px;
+	padding-left: 20px;
+}
+
+.my-submit .submit-header .header-excel{
+	position: absolute;
+	display: block;
+	right: 30px;
+	top: 2px;
+}
+.my-submit .submit-header .header-excel input{
+	height: 40px;
+	width: 60px;
+}
+
+
+.my-submit .my-order-list{
+	padding: 30px 100px;
+}
+
+
+/* 登录与注册 */
+/*遮罩层*/
+.login-regist-background{
+	background: #000; 
+	position: absolute; 
+	left: 0px; 
+	top: 0px; 
+	width: 100%; 
+	filter: alpha(opacity=30); 
+	opacity: 0.3; 
+	display: none; 
+}
+/*弹窗*/
+.login-regist-body{
+	width: 400px; 
+	/*border: 1px solid #999;*/
+	border-radius: 3px; 
+	display: none; 
+	position: absolute; 
+	margin: 100px auto; 
+	padding-bottom: 20px;
+	left: 0;  
+	right: 0;
+	top: 50px; 
+	background: #fff;
+}
+.login-regist-body .body-top{
+	width: 100%;
+	position: relative;
+}
+.login-regist-body .body-top .icon-close{
+	position: absolute;
+	right: 10px;
+	top: 10px;
+
+}
+.login-regist-body .body-top ul{
+	overflow: hidden;
+	width: 340px;
+	margin: 0 auto;
+}
+.login-regist-body .body-top ul li a{
+	display: block;	
+	width: 170px;
+	height: 60px;
+	padding-top: 10px;
+	text-align: center;
+	line-height: 60px;
+	font-size: 22px;
+	border-bottom: 2px solid #DDDDDD;
+
+}
+
+.formTabStyle{
+	display: block;
+	border-bottom-color: #31A4F6;
+}
+
+.login-regist-body .form-inline{
+	width: 300px;
+	margin:0 auto;
+	padding-top: 30px;
+	text-align: center;
+}
+
+.login-regist-body .form-inline input{
+	width: 270px;
+	height: 40px;
+	padding-left:35px;
+	margin-bottom: 20px;
+}
+
+.login-regist-body .form-inline button{
+	width: 200px;
+	height: 35px;
+	font-size:18px;
+	color:white;
+	background: #49AF4F;
+	display: block;
+	margin:0 auto;
+}
+
+.login-regist-body .form-inline .form-group{
+	position: relative;
+}
+.login-regist-body .form-inline .icon-input{
+	position: absolute;
+	top: 8px;
+	left: 8px;
+	height: 20px;
+	width: 20px;
+}
+
+
+/*个人信息*/
+.my-message{
+	width:80%;
+	min-width: 1000px;
+	height: 800px;
+	margin:0 auto;
+	padding-top: 80px;
+	overflow: hidden;
+	display: none;
+
+}
+.my-message .message-header{
+	height: 30px;
+	line-height: 30px;
+	padding-left: 20px;
+	font-size: 18px;
+	/*background: linear-gradient(#32C9FF, #6FA8DC,#DDDDDD);*/
+	border-bottom: 2px solid #32C9FF;
+}
+.my-message .message-form{
+	padding: 30px 100px;
+}
+
+
+
+
+/*底部*/
+.footer{
+	margin-top: 30px;
+	padding-top: 40px;
+    height: 120px;
+    box-sizing: border-box;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    background: #444547;
+    font-size: 12px;
+}
+.footer p{
+	text-align: center;
+}
+
+/*动画*/
+/*添加教材到购物车*/
+.bookToCart{
+	animation:switchColor 0.8s;
+	z-index:999;
+}
+
+
